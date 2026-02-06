@@ -2108,11 +2108,313 @@ p {
     }
 }
 
-@media (max-width: 480px) {
+/* ===== Premium Mobile App Shell ===== */
+@media (max-width: 768px) {
+
+    /* Hide desktop-only elements */
+    .card-nav-container,
+    .back-to-top {
+        display: none !important;
+    }
+
+    .chatbot-trigger {
+        display: flex !important;
+        bottom: 85px !important;
+        right: 20px !important;
+        left: auto !important;
+    }
+
+    /* iOS Status Bar */
+    .mobile-ios-status-bar {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 6px 20px !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        background: #0f172a !important;
+        z-index: 10001 !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        color: white !important;
+    }
+
+    .status-right {
+        display: flex;
+        gap: 8px;
+    }
+
+    /* Mobile App Header */
+    .mobile-app-header {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 40px 20px 15px !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        background: rgba(15, 23, 42, 0.85) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+        z-index: 10000 !important;
+    }
+
+    .logo-ss {
+        font-weight: 800;
+        font-size: 1.2rem;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .mobile-section-title {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: white;
+        margin: 0;
+    }
+
+    .mobile-share-btn {
+        background: rgba(255, 255, 255, 0.05);
+        border: none;
+        color: white;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    /* Adjust main content for fixed header/footer */
+    body {
+        padding-top: 100px !important;
+        padding-bottom: 90px !important;
+        overflow-x: hidden !important;
+    }
+
+    /* Full-width content on mobile */
+    .container {
+        padding: 0 20px !important;
+        width: 100% !important;
+    }
+
+    /* Hero Section Mobile Refinements */
+    .hero {
+        padding: 120px 0 60px !important;
+        text-align: center;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+    }
+
+    .hero-title {
+        font-size: 2.2rem !important;
+        line-height: 1.2 !important;
+        margin-bottom: 15px !important;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem !important;
+        height: 1.5em !important;
+        margin-bottom: 25px !important;
+    }
+
+    .hero-description {
+        font-size: 1rem !important;
+        line-height: 1.6 !important;
+        margin-bottom: 30px !important;
+    }
+
+    .hero-stats {
+        justify-content: center !important;
+        gap: 20px !important;
+        margin-bottom: 30px !important;
+    }
+
+    .stat-number {
+        font-size: 1.8rem !important;
+    }
+
+    .hero-actions {
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+
+    .hero-actions .btn {
+        width: 100% !important;
+        justify-content: center;
+    }
+
+    /* Code Window Mobile Refinements */
+    .hero-visual {
+        margin-top: 20px;
+    }
+
+    .code-window {
+        transform: none !important;
+        perspective: none !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+    }
+
+    .code-header {
+        padding: 10px 15px !important;
+    }
+
+    .code-content {
+        padding: 15px !important;
+    }
+
+    .code-content pre {
+        font-size: 0.75rem !important;
+        line-height: 1.4 !important;
+        white-space: pre-wrap !important;
+        word-break: break-all !important;
+    }
+
+    /* Mobile Bottom Tab Bar */
+    .mobile-bottom-nav {
+        display: flex !important;
+        justify-content: space-around !important;
+        align-items: center !important;
+        position: fixed !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 75px !important;
+        background: rgba(15, 23, 42, 0.95) !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+        z-index: 10000 !important;
+        padding-bottom: 20px !important;
+    }
+
+    .tab-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        text-decoration: none;
+        color: rgba(248, 250, 252, 0.4);
+        transition: var(--transition);
+        flex: 1;
+    }
+
+    .tab-item i {
+        font-size: 1.3rem;
+    }
+
+    .tab-item span {
+        font-size: 0.7rem;
+        font-weight: 600;
+    }
+
+    .tab-item.active {
+        color: var(--nav-accent) !important;
+    }
+
+    /* iOS Home Indicator */
+    .ios-home-indicator {
+        display: block !important;
+        position: fixed !important;
+        bottom: 8px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 130px !important;
+        height: 5px !important;
+        background: rgba(255, 255, 255, 0.3) !important;
+        border-radius: 10px !important;
+        z-index: 10001 !important;
+        pointer-events: none !important;
+    }
+
+    /* Chatbot Mobile Full-screen Refinement */
     .chatbot-window {
-        width: calc(100vw - 40px);
-        left: 0;
-        bottom: 70px;
-        height: 450px;
+        position: fixed !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100dvh !important;
+        border-radius: 0 !important;
+        z-index: 10002 !important;
+        background: #0f172a !important;
+        transform: none !important;
+        opacity: 0;
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .chatbot-window.open {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .chatbot-header {
+        padding: 40px 20px 20px !important;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: rgba(255, 255, 255, 0.03);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .chatbot-back-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        border: none;
+        color: white;
+        font-size: 1.2rem;
+        cursor: pointer;
+        padding: 5px;
+    }
+
+    .header-info {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-right: 32px;
+        /* Offset to center title when back button is present */
+    }
+
+    @media (min-width: 769px) {
+        .chatbot-back-btn {
+            display: none;
+        }
+
+        .header-info {
+            margin-right: 0;
+            justify-content: flex-start;
+        }
+    }
+
+    .chatbot-messages {
+        flex: 1;
+        padding-bottom: 120px !important;
+    }
+
+    .chatbot-input {
+        position: fixed !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        background: rgba(15, 23, 42, 0.95) !important;
+        backdrop-filter: blur(10px);
+        padding: 20px !important;
+        padding-bottom: 40px !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
     }
 }

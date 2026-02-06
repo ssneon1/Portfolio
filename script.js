@@ -262,6 +262,59 @@ document.addEventListener('DOMContentLoaded', () => {
         if (yearElement) yearElement.textContent = new Date().getFullYear();
     }
 
+    // ===== Mobile App Shell Logic =====
+    function initMobileShell() {
+        const sections = document.querySelectorAll('section');
+        const sectionTitle = document.querySelector('.mobile-section-title');
+        const tabItems = document.querySelectorAll('.tab-item');
+
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    // Update Title
+                    if (sectionTitle) {
+                        const titleEl = entry.target.querySelector('.section-title');
+                        const titleText = titleEl ? titleEl.textContent : (id.charAt(0).toUpperCase() + id.slice(1));
+                        sectionTitle.textContent = titleText === 'Hero' ? 'Home' : titleText;
+                    }
+
+                    // Update Tab active state
+                    tabItems.forEach(tab => {
+                        tab.classList.remove('active');
+                        if (tab.getAttribute('href') === `#${id}`) {
+                            tab.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, { threshold: 0.3 });
+
+        sections.forEach(section => sectionObserver.observe(section));
+
+        // Smooth Scroll for tabs
+        tabItems.forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                const targetId = tab.getAttribute('href');
+                if (targetId.startsWith('#')) {
+                    e.preventDefault();
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        window.scrollTo({
+                            top: targetSection.offsetTop - 85,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+    }
+
+    // Initialize Mobile Shell
+    if (window.innerWidth <= 768) {
+        initMobileShell();
+    }
+
     // ===== Chatbot Init =====
     function initChatbot() {
         if (document.getElementById('chatbot')) {
@@ -283,8 +336,8 @@ document.addEventListener('DOMContentLoaded', () => {
         { icon: 'fab fa-linux', title: 'Linux', href: '#' }
     ];
 
-    if (document.getElementById('logoLoop')) {
-        new LogoLoop('logoLoop', { logos: techLogos, speed: 80, logoSize: '2rem', gap: '2rem' });
+    if (document.getElementById('logoContainer')) {
+        new LogoLoop('logoContainer', { logos: techLogos, speed: 50, logoSize: '1.8rem', gap: '2rem' });
     }
 });
 
@@ -296,6 +349,7 @@ class PortfolioChatbot {
         this.trigger = document.getElementById('chatbotTrigger');
         this.window = document.getElementById('chatbotWindow');
         this.closeBtn = document.getElementById('chatbotClose');
+        this.backBtn = document.getElementById('chatbotBack');
         this.form = document.getElementById('chatbotForm');
         this.input = document.getElementById('chatbotInputField');
         this.messagesContainer = document.getElementById('chatbotMessages');
@@ -322,8 +376,35 @@ class PortfolioChatbot {
     init() {
         this.trigger.addEventListener('click', () => this.toggleChat());
         this.closeBtn.addEventListener('click', () => this.closeChat());
+        if (this.backBtn) {
+            this.backBtn.addEventListener('click', () => this.closeChat());
+        }
         this.form.addEventListener('submit', (e) => { e.preventDefault(); this.handleUserMessage(); });
         document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && this.isOpen) this.closeChat(); });
+
+        // Share Button Logic
+        const shareBtn = document.querySelector('.mobile-share-btn');
+        if (shareBtn) {
+            shareBtn.addEventListener('click', async () => {
+                if (navigator.share) {
+                    try {
+                        await navigator.share({
+                            title: 'Siddharth Srivastava | Portfolio',
+                            text: 'Check out Siddharth Srivastava\'s portfolio!',
+                            url: window.location.href,
+                        });
+                    } catch (err) {
+                        console.log('Error sharing:', err);
+                    }
+                } else {
+                    // Fallback: Copy to clipboard
+                    const url = window.location.href;
+                    navigator.clipboard.writeText(url).then(() => {
+                        alert('Link copied to clipboard!');
+                    });
+                }
+            });
+        }
     }
 
     toggleChat() { this.isOpen ? this.closeChat() : this.openChat(); }
@@ -332,10 +413,18 @@ class PortfolioChatbot {
         this.isOpen = true;
         this.window.classList.add('open');
         this.trigger.querySelector('.trigger-badge').style.display = 'none';
-        this.input.focus();
+
+        // Use a small delay for mobile keyboards to stabilize
+        setTimeout(() => {
+            this.input.focus();
+        }, 300);
     }
 
-    closeChat() { this.isOpen = false; this.window.classList.remove('open'); }
+    closeChat() {
+        this.isOpen = false;
+        this.window.classList.remove('open');
+        this.input.blur();
+    }
 
     handleUserMessage() {
         const text = this.input.value.trim();
@@ -419,7 +508,8 @@ class LogoLoop {
         if (!this.container) return;
         this.options = { logos: options.logos || [], speed: options.speed || 100, direction: options.direction || 'left', logoSize: options.logoSize || '2.5rem', gap: options.gap || '1.5rem', pauseOnHover: options.pauseOnHover || false };
         this.logoLoop = null; this.animationId = null; this.lastTimestamp = null; this.position = 0; this.isHovered = false;
-        this.init(); this.animate();
+        this.init();
+        requestAnimationFrame((t) => this.animate(t));
     }
     init() { this.createLogoElements(); this.setupEventListeners(); }
     createLogoElements() {
@@ -449,18 +539,29 @@ class LogoLoop {
         if (!this.lastTimestamp) this.lastTimestamp = timestamp;
         const deltaTime = (timestamp - this.lastTimestamp) / 1000;
         this.lastTimestamp = timestamp;
-        let movement = 0;
+
         if (!this.isHovered || !this.options.pauseOnHover) {
-            movement = this.options.speed * deltaTime;
-            if (this.options.direction === 'left') movement = -movement;
+            let movement = this.options.speed * deltaTime;
+            if (this.options.direction === 'left') {
+                this.position -= movement;
+            } else {
+                this.position += movement;
+            }
         }
-        this.position += movement;
-        const totalContentWidth = this.logoLoop.scrollWidth;
-        const oneSetWidth = totalContentWidth / 4;
-        if (Math.abs(this.position) >= oneSetWidth) {
-            this.position += oneSetWidth;
-            if (Math.abs(this.position) >= oneSetWidth) this.position = this.position % oneSetWidth;
+
+        const totalWidth = this.logoLoop.scrollWidth;
+        const oneSetWidth = totalWidth / 4;
+
+        if (this.options.direction === 'left') {
+            if (Math.abs(this.position) >= oneSetWidth) {
+                this.position = 0;
+            }
+        } else {
+            if (this.position >= 0) {
+                this.position = -oneSetWidth;
+            }
         }
+
         this.logoLoop.style.transform = `translateX(${this.position}px)`;
         this.animationId = requestAnimationFrame(this.animate.bind(this));
     }

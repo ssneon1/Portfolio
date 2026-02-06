@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Siddharth Srivastava | Full-Stack Developer & AWS Cloud Engineer</title>
     <meta name="description"
         content="Full-Stack Developer with AWS Cloud expertise. Production experience in building scalable systems, Python, Flask/Django, and team leadership.">
@@ -36,6 +36,20 @@
             <div class="loader-progress"></div>
         </div>
     </div>
+
+
+
+    <header class="mobile-app-header">
+        <div class="header-left">
+            <span class="logo-ss">SS</span>
+        </div>
+        <h2 class="mobile-section-title">Home</h2>
+        <div class="header-right">
+            <button class="mobile-share-btn" aria-label="Share">
+                <i class="fas fa-share-alt"></i>
+            </button>
+        </div>
+    </header>
 
     <!-- Floating Particles Background -->
     <div class="particles" id="particles"></div>
@@ -901,12 +915,15 @@ status = <span class="code-string">"Production"</span>
 
         <div class="chatbot-window" id="chatbotWindow">
             <div class="chatbot-header">
+                <button class="chatbot-back-btn" id="chatbotBack" aria-label="Back">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
                 <div class="header-info">
                     <div class="bot-avatar">
                         <i class="fas fa-robot"></i>
                         <span class="online-status"></span>
                     </div>
-                    <div>
+                    <div class="bot-details">
                         <h3>Siddharth's AI</h3>
                         <p>Ask me anything!</p>
                     </div>
@@ -939,6 +956,33 @@ status = <span class="code-string">"Production"</span>
             </div>
         </div>
     </div>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav">
+        <a href="#hero" class="tab-item active" data-section="Home">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="#skills" class="tab-item" data-section="Skills">
+            <i class="fas fa-bolt"></i>
+            <span>Skills</span>
+        </a>
+        <a href="#projects" class="tab-item" data-section="Projects">
+            <i class="fas fa-project-diagram"></i>
+            <span>Projects</span>
+        </a>
+        <a href="#experience" class="tab-item" data-section="Exp">
+            <i class="fas fa-briefcase"></i>
+            <span>Exp</span>
+        </a>
+        <a href="#contact" class="tab-item" data-section="Contact">
+            <i class="fas fa-envelope"></i>
+            <span>Contact</span>
+        </a>
+    </nav>
+
+    <!-- iOS Home Indicator -->
+    <div class="ios-home-indicator"></div>
 
     <!-- JavaScript -->
     <script src="nav/script.js"></script>
