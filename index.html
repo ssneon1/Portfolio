@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siddharth Srivastava | Full-Stack Developer & AWS Cloud Engineer</title>
+    <meta name="description"
+        content="Full-Stack Developer with AWS Cloud expertise. Production experience in building scalable systems, Python, Flask/Django, and team leadership.">
+    <meta name="keywords" content="Full-Stack Developer, AWS, Python, Flask, Django, Cloud Engineer, Portfolio">
+    <meta name="author" content="Siddharth Srivastava">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="nav/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+
+<body>
+    <!-- Loader -->
+    <div class="loader">
+        <div class="loader-content">
+            <div class="loader-text">SS</div>
+            <div class="loader-progress"></div>
+        </div>
+    </div>
+
+    <!-- Floating Particles Background -->
+    <div class="particles" id="particles"></div>
+
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Navigation -->
+    <div class="card-nav-container">
+        <nav class="card-nav" id="cardNav">
+            <div class="card-nav-top">
+                <div class="hamburger-menu" id="hamburgerMenu" role="button" aria-label="Toggle menu" tabindex="0">
+                    <div class="hamburger-line"></div>
+                    <div class="hamburger-line"></div>
+                </div>
+
+                <a href="#hero" class="logo-container">
+                    SS<span class="logo-dot"></span>
+                </a>
+
+                <a href="resume.pdf" class="card-nav-cta-button" id="ctaButton" download>
+                    <i class="fas fa-download"></i>
+                    Resume
+                </a>
+            </div>
+
+            <div class="card-nav-content">
+                <a href="#hero" class="nav-card">
+                    <div class="nav-card-header">
+                        <div class="nav-card-icon"><i class="fas fa-home"></i></div>
+                        <i class="fas fa-arrow-right nav-card-arrow"></i>
+                    </div>
+                    <div class="nav-card-title">Home</div>
+                    <div class="nav-card-description">Back to the start</div>
+                </a>
+
+                <a href="#about" class="nav-card">
+                    <div class="nav-card-header">
+                        <div class="nav-card-icon"><i class="fas fa-user"></i></div>
+                        <i class="fas fa-arrow-right nav-card-arrow"></i>
+                    </div>
+                    <div class="nav-card-title">About</div>
+                    <div class="nav-card-description">Get to know me</div>
+                </a>
+
+                <a href="#skills" class="nav-card">
+                    <div class="nav-card-header">
+                        <div class="nav-card-icon"><i class="fas fa-code"></i></div>
+                        <i class="fas fa-arrow-right nav-card-arrow"></i>
+                    </div>
+                    <div class="nav-card-title">Skills</div>
+                    <div class="nav-card-description">Technical expertise</div>
+                </a>
+
+                <a href="#experience" class="nav-card">
+                    <div class="nav-card-header">
+                        <div class="nav-card-icon"><i class="fas fa-briefcase"></i></div>
+                        <i class="fas fa-arrow-right nav-card-arrow"></i>
+                    </div>
+                    <div class="nav-card-title">Experience</div>
+                    <div class="nav-card-description">My professional journey</div>
+                </a>
+
+                <a href="#projects" class="nav-card">
+                    <div class="nav-card-header">
+                        <div class="nav-card-icon"><i class="fas fa-project-diagram"></i></div>
+                        <i class="fas fa-arrow-right nav-card-arrow"></i>
+                    </div>
+                    <div class="nav-card-title">Projects</div>
+                    <div class="nav-card-description">Featured work & systems</div>
+                </a>
+
+                <a href="#contact" class="nav-card">
+                    <div class="nav-card-header">
+                        <div class="nav-card-icon"><i class="fas fa-envelope"></i></div>
+                        <i class="fas fa-arrow-right nav-card-arrow"></i>
+                    </div>
+                    <div class="nav-card-title">Contact</div>
+                    <div class="nav-card-description">Let's connect</div>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">Available for Opportunities</div>
+
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="gradient-text">Siddharth Srivastava</span>
+                        <span class="title-cursor"></span>
+                    </h1>
+
+                    <div class="hero-subtitle">
+                        <div class="typewriter">
+                            <span class="type-text">Full-Stack Developer</span>
+                            <span class="type-text">AWS Cloud Enthusiast</span>
+                            <span class="type-text">Team Lead & Mentor</span>
+                            <span class="type-text">Problem Solver</span>
+                        </div>
+                    </div>
+
+                    <p class="hero-description">
+                        Building scalable web applications with Python, AWS, and modern frameworks.
+                        Passionate about cloud architecture, DevOps, and creating impactful solutions.
+                    </p>
+
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-number" data-count="15">15</div>
+                            <div class="stat-label">Projects</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number" data-count="3">0</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number" data-count="2">4</div>
+                            <div class="stat-label">Production Systems</div>
+                        </div>
+                    </div>
+
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            <span>Get in Touch</span>
+                        </a>
+                        <a href="#projects" class="btn btn-secondary">
+                            <i class="fas fa-eye"></i>
+                            <span>View Projects</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="code-window">
+                        <div class="code-header">
+                            <div class="code-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="code-title">portfolio.py</span>
+                        </div>
+                        <div class="code-content">
+                            <pre><code class="language-python">
+<span class="code-comment"># Full-Stack Developer Portfolio</span>
+<span class="code-keyword">class</span> <span class="code-class">Developer</span>:
+    <span class="code-keyword">def</span> <span class="code-function">__init__</span>(<span class="code-param">self</span>):
+        self.name = <span class="code-string">"Siddharth Srivastava"</span>
+        self.role = <span class="code-string">"Full-Stack Developer"</span>
+        self.skills = [
+            <span class="code-string">"Python"</span>, <span class="code-string">"AWS"</span>, <span class="code-string">"Flask"</span>,
+            <span class="code-string">"Django"</span>, <span class="code-string">"MySQL"</span>, <span class="code-string">"Docker"</span>
+        ]
+        self.experience = <span class="code-number">3</span>
+    
+    <span class="code-keyword">def</span> <span class="code-function">build_project</span>(<span class="code-param">self</span>, requirements):
+        <span class="code-comment"># Transform ideas into production-ready solutions</span>
+        solution = self.design_architecture(requirements)
+        deployed = self.deploy_aws(solution)
+        <span class="code-keyword">return</span> deployed
+
+<span class="code-comment"># Currently working on:</span>
+current_project = <span class="code-string">"Scalable CRM System"</span>
+status = <span class="code-string">"Production"</span>
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-scroll">
+                <span class="scroll-text">Scroll to explore</span>
+                <div class="scroll-arrow"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Get to know me</span>
+                <h2 class="section-title">About Me</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="avatar-container">
+                        <div class="avatar-ring"></div>
+                        <div class="avatar-glow"></div>
+                        <div class="avatar" style="background-image: url('profile.jpeg');">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-text">
+                    <h3>Full‑Stack Developer | Cloud & AWS Enthusiast</h3>
+                    <p>
+                        Motivated Full‑Stack Developer and Cloud Engineering enthusiast with hands‑on experience
+                        building and deploying production‑ready systems on AWS. Proven ability to design scalable
+                        backend systems, integrate databases, ship real features for startups, and lead teams under
+                        pressure.
+                    </p>
+                    <p>
+                        Strong foundation in Python, Flask/Django, MySQL, and AWS EC2/RDS with real‑world deployment
+                        exposure. Currently pursuing BCA while actively shipping code and managing cloud infrastructure.
+                    </p>
+
+                    <div class="about-details">
+                        <div class="detail">
+                            <span class="detail-label">Location</span>
+                            <span class="detail-value">Prayagraj, India</span>
+                        </div>
+                        <div class="detail">
+                            <span class="detail-label">Email</span>
+                            <a href="mailto:siddharthsri9889@gmail.com"
+                                class="detail-value">siddharthsri9889@gmail.com</a>
+                        </div>
+                        <div class="detail">
+                            <span class="detail-label">Phone</span>
+                            <a href="tel:+917839547961" class="detail-value">+91 7839547961</a>
+                        </div>
+                        <div class="detail">
+                            <span class="detail-label">Availability</span>
+                            <span class="detail-value status-available">Open to Opportunities</span>
+                        </div>
+                    </div>
+
+                    <div class="about-interests">
+                        <h4>Interests & Focus Areas</h4>
+                        <div class="interests">
+                            <span class="interest">
+                                <i class="fas fa-cloud"></i>
+                                Cloud Architecture
+                            </span>
+                            <span class="interest">
+                                <i class="fas fa-server"></i>
+                                DevOps
+                            </span>
+                            <span class="interest">
+                                <i class="fas fa-brain"></i>
+                                AI/ML Integration
+                            </span>
+                            <span class="interest">
+                                <i class="fas fa-shield-alt"></i>
+                                System Security
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">My technical expertise</span>
+                <h2 class="section-title">Skills & Technologies</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="skills-categories">
+                <div class="category">
+                    <h3 class="category-title">
+                        <i class="fas fa-laptop-code"></i>
+                        Languages
+                    </h3>
+                    <div class="skills-grid">
+                        <div class="skill" data-level="90">
+                            <div class="skill-header">
+                                <i class="fab fa-python"></i>
+                                <span>Python</span>
+                            </div>
+                            <div class="skill-level">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                        <div class="skill" data-level="85">
+                            <div class="skill-header">
+                                <i class="fas fa-code"></i>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="skill-level">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                        <div class="skill" data-level="80">
+                            <div class="skill-header">
+                                <i class="fas fa-cogs"></i>
+                                <span>C++</span>
+                            </div>
+                            <div class="skill-level">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                        <div class="skill" data-level="85">
+                            <div class="skill-header">
+                                <i class="fas fa-database"></i>
+                                <span>SQL</span>
+                            </div>
+                            <div class="skill-level">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3 class="category-title">
+                        <i class="fas fa-layer-group"></i>
+                        Frameworks & Mobile
+                    </h3>
+                    <div class="skills-grid">
+                        <div class="skill" data-level="85">
+                            <div class="skill-header">
+                                <i class="fas fa-flask"></i>
+                                <span>Flask / Django</span>
+                            </div>
+                            <div class="skill-level">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                        <div class="skill" data-level="75">
+                            <div class="skill-header">
+                                <i class="fab fa-android"></i>
+                                <span>Flutter / Dart</span>
+                            </div>
+                            <div class="skill-level">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                        <div class="skill" data-level="75">
+                            <div class="skill-header">
+                                <i class="fab fa-bootstrap"></i>
+                                <span>Bootstrap</span>
+                            </div>
+                            <div class="skill-level">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3 class="category-title">
+                        <i class="fas fa-cloud"></i>
+                        Cloud & DevOps
+                    </h3>
+                    <div class="skills-grid">
+                        <div class="skill" data-level="85">
+                            <div class="skill-header">
+                                <i class="fab fa-aws"></i>
+                                <span>AWS EC2/RDS</span>
+                            </div>
+                            <div class="skill-level">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                        <div class="skill" data-level="75">
+                            <div class="skill-header">
+                                <i class="fas fa-server"></i>
+                                <span>Linux / SSH</span>
+                            </div>
+                            <div class="skill-level">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                        <div class="skill" data-level="80">
+                            <div class="skill-header">
+                                <i class="fas fa-rocket"></i>
+                                <span>Production Deployment</span>
+                            </div>
+                            <div class="skill-level">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3 class="category-title">
+                        <i class="fas fa-database"></i>
+                        Databases
+                    </h3>
+                    <div class="skills-grid">
+                        <div class="skill" data-level="85">
+                            <div class="skill-header">
+                                <i class="fas fa-database"></i>
+                                <span>MySQL</span>
+                            </div>
+                            <div class="skill-level">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                        <div class="skill" data-level="80">
+                            <div class="skill-header">
+                                <i class="fas fa-database"></i>
+                                <span>SQLite</span>
+                            </div>
+                            <div class="skill-level">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                        <div class="skill" data-level="75">
+                            <div class="skill-header">
+                                <i class="fas fa-cube"></i>
+                                <span>SQLAlchemy</span>
+                            </div>
+                            <div class="skill-level">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </section>
+
+    <!-- Tech Stack Scroller -->
+    <section class="tech-stack-scroller" style="padding: 0 0 4rem 0;">
+        <div class="container">
+            <div class="section-header" style="margin-bottom: 2rem;">
+                <span class="section-subtitle">Tools I use daily</span>
+                <h4 class="section-title" style="font-size: 1.5rem;">My Tech Stack</h4>
+            </div>
+
+            <div class="logo-loop-container fade" id="logoContainer">
+                <div class="logo-loop" id="logoLoop">
+                    <!-- Logos will be inserted by JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Professional journey</span>
+                <h2 class="section-title">Experience</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2025 – 2026</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Full-Stack Developer</h3>
+                            <span class="timeline-company">Startup Project (Delivery CRM)</span>
+                        </div>
+                        <div class="timeline-body">
+                            <ul>
+                                <li>Designed, developed, & deployed production-ready Delivery CRM on AWS.</li>
+                                <li>Deployed backend on AWS EC2 (t3.medium/t3.large) & configured RDS MySQL.</li>
+                                <li>Built real-time group chat module storing messages in AWS RDS.</li>
+                                <li>Implemented role-based access, automated billing, and shipment tracking.</li>
+                                <li>Deployed updates directly to production via SSH.</li>
+                            </ul>
+                            <div class="tech-stack">
+                                <span>AWS EC2</span>
+                                <span>Python/Flask</span>
+                                <span>MySQL</span>
+                                <span>Linux</span>
+                                <span>REST API</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2024 (3 Months)</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Web Designer & Cloud Hosting Intern</h3>
+                            <span class="timeline-company">Freelance</span>
+                        </div>
+                        <div class="timeline-body">
+                            <ul>
+                                <li>Designed & developed responsive websites</li>
+                                <li>Deployed applications on AWS EC2 instances</li>
+                                <li>Configured cloud servers & performed deployments</li>
+                                <li>Worked with client requirements & delivered solutions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item highlight">
+                    <div class="timeline-date">2025</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Team Leader</h3>
+                            <span class="timeline-company">Codestorm'25 Hackathon</span>
+                        </div>
+                        <div class="timeline-body">
+                            <p>Led team "Bug Squashers" in 24-hour hackathon. Planned architecture, delegated tasks,
+                                resolved bugs, and delivered final solution.</p>
+                            <div class="achievement">
+                                <i class="fas fa-trophy"></i>
+                                <span>Leadership in rapid development environment</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Featured work</span>
+                <h2 class="section-title">Projects</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web Apps</button>
+                <button class="filter-btn" data-filter="cloud">Cloud</button>
+                <button class="filter-btn" data-filter="mobile">Mobile</button>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Delivery CRM -->
+                <div class="project-card" data-category="cloud web">
+                    <div class="project-image">
+                        <div class="project-badge">Production</div>
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Delivery CRM System</h3>
+                        <p>Production-ready Delivery CRM on AWS. Features smart pricing, real-time tracking, role-based
+                            access, and automated billing.</p>
+                        <div class="project-tech">
+                            <span>AWS EC2/RDS</span>
+                            <span>Flask</span>
+                            <span>MySQL</span>
+                            <span>Bootstrap</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="link-btn disabled">
+                                <i class="fas fa-eye"></i>
+                                Live Demo
+                            </a>
+                            <span class="project-status">
+                                <i class="fas fa-circle"></i>
+                                Production
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Delivery Agent App -->
+                <div class="project-card" data-category="mobile">
+                    <div class="project-image">
+                        <div class="project-badge">Flutter</div>
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Delivery Agent App</h3>
+                        <p>Mobile app for delivery agents with voice recording, real-time chat, and seamless backend
+                            integration.</p>
+                        <div class="project-tech">
+                            <span>Flutter</span>
+                            <span>Dart</span>
+                            <span>Flask API</span>
+                            <span>MySQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="link-btn">
+                                <i class="fab fa-github"></i>
+                                Code
+                            </a>
+                            <span class="project-status">
+                                <i class="fas fa-code"></i>
+                                Development
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Health Assistant -->
+                <div class="project-card" data-category="mobile">
+                    <div class="project-image">
+                        <div class="project-badge">Python</div>
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Health & Wellness Assistant</h3>
+                        <p>Hackathon project combining Ayurveda, yoga guidance, emergency care, and diet planning with
+                            local storage.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Kivy</span>
+                            <span>SQLite</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/ssneon1" target="_blank" class="link-btn">
+                                <i class="fab fa-github"></i>
+                                Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AWS Portfolio -->
+                <div class="project-card" data-category="cloud web">
+                    <div class="project-image">
+                        <div class="project-badge">AWS</div>
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>AWS-Hosted Portfolio</h3>
+                        <p>Professional portfolio website deployed on AWS EC2 with custom domain and SSL configuration.
+                        </p>
+                        <div class="project-tech">
+                            <span>AWS EC2</span>
+                            <span>HTML/CSS</span>
+                            <span>JavaScript</span>
+                            <span>Nginx</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="link-btn">
+                                <i class="fas fa-eye"></i>
+                                View Live
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Document Converter -->
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <div class="project-badge">Tool</div>
+                        <i class="fas fa-file-convert"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Document Converter Web</h3>
+                        <p>Web platform for converting websites into PDF, Word, and PPT formats with batch processing.
+                        </p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Flask</span>
+                            <span>PDF Processing</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="link-btn">
+                                <i class="fab fa-github"></i>
+                                Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo Editor -->
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <div class="project-badge">Web App</div>
+                        <i class="fas fa-image"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Photo Editing Website</h3>
+                        <p>Web-based photo editor with multiple filters, adjustments, and image manipulation tools.</p>
+                        <div class="project-tech">
+                            <span>JavaScript</span>
+                            <span>HTML5 Canvas</span>
+                            <span>CSS3</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="link-btn">
+                                <i class="fas fa-eye"></i>
+                                Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phone Recording App -->
+                <div class="project-card" data-category="mobile">
+                    <div class="project-image">
+                        <div class="project-badge">Flutter</div>
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Phone Recording App</h3>
+                        <p>A personal "time pass" project exploring mobile call recording and management using Flutter
+                            hardware APIs.</p>
+                        <div class="project-tech">
+                            <span>Flutter</span>
+                            <span>Dart</span>
+                            <span>Mobile API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/ssneon1" target="_blank" class="link-btn">
+                                <i class="fab fa-github"></i>
+                                Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Let's connect</span>
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <a href="mailto:siddharthsri9889@gmail.com">siddharthsri9889@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <a href="tel:+917839547961">+91 7839547961</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>LinkedIn</h3>
+                            <a href="https://linkedin.com/in/siddharth-srivastava-409097317" target="_blank">Connect
+                                with me</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>GitHub</h3>
+                            <a href="https://github.com/ssneon1" target="_blank">@ssneon1</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                            <div class="input-border"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email" required>
+                            <div class="input-border"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" name="subject" placeholder="Subject" required>
+                            <div class="input-border"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                            <div class="input-border"></div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary submit-btn">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+
+                    <div class="form-success" id="formSuccess">
+                        <i class="fas fa-check-circle"></i>
+                        <p>Message sent successfully! I'll get back to you soon.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#hero" class="footer-logo">SS</a>
+                    <p>Building the future, one line of code at a time</p>
+                </div>
+
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Navigation</h4>
+                        <a href="#hero">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#skills">Skills</a>
+                        <a href="#experience">Experience</a>
+                        <a href="#projects">Projects</a>
+                    </div>
+
+                    <div class="link-group">
+                        <h4>Connect</h4>
+                        <a href="https://github.com/ssneon1" target="_blank">GitHub</a>
+                        <a href="https://linkedin.com/in/siddharth-srivastava-409097317" target="_blank">LinkedIn</a>
+                        <a href="mailto:siddharthsri9889@gmail.com">Email</a>
+                    </div>
+                </div>
+
+                <div class="footer-newsletter">
+                    <h4>Stay Updated</h4>
+                    <p>Subscribe to my newsletter for updates on new projects and tech insights.</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Siddharth Srivastava. All rights reserved.</p>
+                <p>Made with <i class="fas fa-heart"></i> and <i class="fas fa-code"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot -->
+    <div class="chatbot-container" id="chatbot">
+        <button class="chatbot-trigger" id="chatbotTrigger" aria-label="Open chat">
+            <i class="fas fa-comment-dots"></i>
+            <span class="trigger-badge">1</span>
+        </button>
+
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <div class="header-info">
+                    <div class="bot-avatar">
+                        <i class="fas fa-robot"></i>
+                        <span class="online-status"></span>
+                    </div>
+                    <div>
+                        <h3>Siddharth's AI</h3>
+                        <p>Ask me anything!</p>
+                    </div>
+                </div>
+                <button class="chatbot-close" id="chatbotClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot">
+                    <div class="message-content">
+                        Hi! I'm Siddharth's AI assistant. Ask me about his skills, projects, or experience.
+                        <strong>Tip: Type !send &lt;message&gt; to send a direct email to Siddharth!</strong>
+                    </div>
+                    <span class="message-time">Just now</span>
+                </div>
+            </div>
+
+            <div class="chatbot-input">
+                <div class="typing-indicator" id="typingIndicator">
+                    <span></span><span></span><span></span>
+                </div>
+                <form id="chatbotForm">
+                    <input type="text" id="chatbotInputField" placeholder="Type a message..." autocomplete="off">
+                    <button type="submit" id="chatbotSend">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="nav/script.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

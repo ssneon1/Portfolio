@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Navigation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+
+<body>
+    <div class="card-nav-container">
+        <nav class="card-nav" id="cardNav">
+            <div class="card-nav-top">
+                <div class="hamburger-menu" id="hamburgerMenu" role="button" aria-label="Toggle menu" tabindex="0">
+                    <div class="hamburger-line"></div>
+                    <div class="hamburger-line"></div>
+                </div>
+
+                <div class="logo-container">
+                    <svg class="logo" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 10L30 30L40 10L50 30L60 10" stroke="currentColor" stroke-width="3"
+                            stroke-linecap="round" />
+                        <path d="M80 10V30M90 10V30M100 10L100 30" stroke="currentColor" stroke-width="3"
+                            stroke-linecap="round" />
+                    </svg>
+                </div>
+
+                <button class="card-nav-cta-button" id="ctaButton">
+                    Get Started
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <div class="card-nav-content" aria-hidden="true">
+                <div class="nav-card" style="--card-color: #0D0716;">
+                    <div class="nav-card-header">
+                        <h3 class="nav-card-label">About</h3>
+                        <div class="card-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                    <div class="nav-card-links">
+                        <a href="#" class="nav-card-link" aria-label="About Company">
+                            <span>Company</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="#" class="nav-card-link" aria-label="About Careers">
+                            <span>Careers</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nav-card" style="--card-color: #170D27;">
+                    <div class="nav-card-header">
+                        <h3 class="nav-card-label">Projects</h3>
+                        <div class="card-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                    <div class="nav-card-links">
+                        <a href="#" class="nav-card-link" aria-label="Featured Projects">
+                            <span>Featured</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="#" class="nav-card-link" aria-label="Project Case Studies">
+                            <span>Case Studies</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nav-card" style="--card-color: #271E37;">
+                    <div class="nav-card-header">
+                        <h3 class="nav-card-label">Contact</h3>
+                        <div class="card-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                    <div class="nav-card-links">
+                        <a href="#" class="nav-card-link" aria-label="Email us">
+                            <span>Email</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="#" class="nav-card-link" aria-label="Twitter">
+                            <span>Twitter</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="#" class="nav-card-link" aria-label="LinkedIn">
+                            <span>LinkedIn</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <main class="content">
+        <h1>Modern Card Navigation</h1>
+        <p>Click the hamburger menu to reveal the animated card navigation</p>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
