@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initBackToTop();
     initCurrentYear();
     initChatbot();
+    initNewsletterForm();
 
     // ===== Loader =====
     function initLoader() {
@@ -189,6 +190,43 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else throw new Error('Network response failed');
             } catch (error) {
                 alert('Error sending message. Please try again later.');
+            } finally {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+    }
+
+    // ===== Newsletter Form =====
+    function initNewsletterForm() {
+        const newsletterForm = document.getElementById('newsletterForm');
+        const newsletterSuccess = document.getElementById('newsletterSuccess');
+        if (!newsletterForm) return;
+
+        newsletterForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const submitBtn = newsletterForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+            submitBtn.disabled = true;
+
+            try {
+                const response = await fetch("https://formspree.io/f/mjgebard", {
+                    method: "POST",
+                    body: new FormData(newsletterForm),
+                    headers: { 'Accept': 'application/json' }
+                });
+                if (response.ok) {
+                    newsletterForm.style.display = 'none';
+                    newsletterSuccess.style.display = 'block';
+                    newsletterForm.reset();
+                    setTimeout(() => {
+                        newsletterSuccess.style.display = 'none';
+                        newsletterForm.style.display = 'flex'; // Footer form is flex
+                    }, 5000);
+                } else throw new Error('Network response failed');
+            } catch (error) {
+                alert('Error subscribing. Please try again later.');
             } finally {
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
